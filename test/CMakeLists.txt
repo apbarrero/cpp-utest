@@ -35,5 +35,15 @@ add_dependencies(gmock_main project_gmock)
 
 include_directories(${cpp_utest_SOURCE_DIR}/src)
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
-#add_executable(utests )
-#target_link_libraries(utests gmock_main gmock gtest pthread)
+add_executable(utests StringCalculatorTest.cc)
+target_link_libraries(utests sc gmock_main gmock gtest pthread)
+
+set(utests_stamp
+    "${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/utests.stamp")
+add_custom_command(OUTPUT "${utests_stamp}"
+    COMMAND ./utests
+    COMMAND ${CMAKE_COMMAND} -E touch "${utests_stamp}"
+    COMMENT "Running unit test"
+    DEPENDS utests)
+add_custom_target(check ALL DEPENDS "${utests_stamp}")
+
