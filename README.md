@@ -10,9 +10,9 @@ There is no kata solution here, just a good starting point.
 
 ## Requirements
 
-* cmake >= 2.8
-* A c++11 compatible compiler, e.g. gcc >= 4.7
-* svn (Subversion)
+* [cmake](http://www.cmake.org/) >= 2.8
+* A c++11 compatible compiler, e.g. [gcc](https://gcc.gnu.org/) >= 4.7
+* [svn](https://subversion.apache.org/) (Subversion)
 
 ## Build
 
