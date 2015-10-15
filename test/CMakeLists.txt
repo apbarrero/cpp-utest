@@ -32,7 +32,9 @@ set_property(TARGET gmock_main PROPERTY IMPORTED_LOCATION ${binary_dir}/libgmock
 add_dependencies(gmock_main project_gmock)
 
 include_directories(${cpp_utest_SOURCE_DIR}/src)
-set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+   set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+endif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 add_executable(utests StringCalculatorTest.cc)
 target_link_libraries(utests sc gmock_main gmock gtest pthread)
 
