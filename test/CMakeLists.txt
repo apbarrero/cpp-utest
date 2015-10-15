@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 2.8)
 
 include(ExternalProject)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-
 set(GMOCK_VERSION "1.7.0")
 set(GMOCK_DIR "${CMAKE_CURRENT_BINARY_DIR}/gmock-${GMOCK_VERSION}")
 ExternalProject_Add(project_gmock
