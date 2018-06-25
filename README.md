@@ -11,7 +11,7 @@ There is no kata solution here, just a good starting point.
 ## Requirements
 
 * [cmake](http://www.cmake.org/) >= 2.8
-* A c++11 compatible compiler, e.g. [gcc](https://gcc.gnu.org/) >= 4.7
+* A c++11 compatible compiler, e.g. [gcc](https://gcc.gnu.org/) >= 4.8.1
 
 ## Build
 
